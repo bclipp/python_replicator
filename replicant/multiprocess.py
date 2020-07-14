@@ -2,6 +2,8 @@
 This module is used for abstracted uses of the multiprocess library.
 """
 
+
+
 import multiprocessing as mp
 from typing import Callable, Optional
 
@@ -20,7 +22,7 @@ def multiprocess_me(size: int,
     :return: if output is true the return will be a list of the output from the function
     """
     if not isinstance(data, list):
-        raise Exception("Data must be a a dict")
+        raise NotDict("Data must be a a dict")
     pool = mp.Pool(size)
     updated_data: list = pool.map(func, data)
     pool.close()
@@ -28,3 +30,8 @@ def multiprocess_me(size: int,
     if output:
         return updated_data
     return None
+
+
+class NotDict(Exception):
+    pass
+

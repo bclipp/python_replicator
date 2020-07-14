@@ -29,7 +29,12 @@ TESTDATA = [pd.DataFrame(
           [16, 2, "b", 3, 4, 5, 3]])]
 
 
-def this_me(x):
+def return_this(x):
+    """
+    returns the value in the "This" key.
+    :param x:
+    :return:
+    """
     return x["This"]
 
 
@@ -48,7 +53,9 @@ def test_multiprocess_me_side_return(data_frame):
     Used to test the multiprocess funciton without a return
     """
     data: list = list(data_frame.T.to_dict().values())
-    mult.multiprocess_me(1, this_me, data, True)
+    got: list = mult.multiprocess_me(1, return_this, data, True)
+    want: list = [5, 7, 8, 3, 2, 8, 2, 8, 19, 53, 11, 16]
+    assert got == want
 
 
 def test_multiprocess_not_data_frame_input():
@@ -57,6 +64,6 @@ def test_multiprocess_not_data_frame_input():
     """
     data: str = "this is not a DataFrame"
     try:
-        mult.multiprocess_me(1, this_me, data, False)
-    except Exception:
+        mult.multiprocess_me(1, print, data, False)
+    except mult.NotDict:
         assert True
