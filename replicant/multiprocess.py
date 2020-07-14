@@ -25,3 +25,4 @@ def multiprocess_me(size: int,
     pool.join()
     if output:
         return updated_data
+    return None
