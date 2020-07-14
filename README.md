@@ -2,6 +2,7 @@
 
 # replicator
 
+[PyPi Package](https://pypi.org/project/replicators/)
 
 ### description
 This is a personal package used to hold code patterns used for multithreading and multiprocessing.
@@ -9,7 +10,9 @@ This is a personal package used to hold code patterns used for multithreading an
 ### usage
 ```pip install replicator```
 
-```import replicant.multiprocess as mult
+```
+
+import replicant.multiprocess as mult
 
 data_frame: pd.DataFrame = pd.DataFrame(
         columns=["This",

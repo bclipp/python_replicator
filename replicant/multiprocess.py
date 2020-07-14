@@ -17,7 +17,7 @@ def multiprocess_me(size: int,
     :param func: the function to use on each dict
     :param data: a list of dicts.
     :param output: Should multiprocess_me return a list of Dict?
-    :return:
+    :return: if output is true the return will be a list of the output from the function
     """
     if not isinstance(data, list):
         raise Exception("Data must be a a dict")
