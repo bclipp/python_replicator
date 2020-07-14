@@ -15,7 +15,7 @@ with open("README.md") as fid:
 # This call to setup() does all the wohttps://pypi.org/project/replicators/rk
 setup(
     name="replicators",
-    version="1.0.1",
+    version="1.1.0",
     description="abstraction for concurrency and multithreading",
     long_description=README,
     long_description_content_type="text/markdown",
