@@ -33,5 +33,6 @@ def multiprocess_me(size: int,
 
 
 class NotDict(Exception):
-    pass
-
+    """
+    This is used for a custom Exception
+    """
