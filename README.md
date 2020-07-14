@@ -1,6 +1,6 @@
 ![Python](https://github.com/bclipp/replicators/workflows/Python/badge.svg)
 
-# replicator
+# replicators
 
 [PyPi Package](https://pypi.org/project/replicators/)
 
