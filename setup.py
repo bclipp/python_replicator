@@ -5,17 +5,14 @@ This is the file used for creating the package
 import os.path
 from setuptools import setup
 
-# The directory containing this file
 HERE = os.path.abspath(os.path.dirname(__file__))
 
-# The text of the README file
 with open("README.md") as fid:
     README = fid.read()
 
-# This call to setup() does all the wohttps://pypi.org/project/replicators/rk
 setup(
     name="replicators",
-    version="1.1.0",
+    version="1.2.0",
     description="abstraction for concurrency and multithreading",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -28,7 +25,7 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
     ],
-    packages=["replicant"],
+    packages=["replicators"],
     include_package_data=False,
     entry_points={"console_scripts": ["replicators=replicant.__main__:main"]},
 )

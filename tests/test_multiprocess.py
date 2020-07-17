@@ -5,7 +5,7 @@ tests for the multiprocess
 import pandas as pd
 import pytest
 
-import replicant.multiprocess as mult
+import replicators.multiprocess as mult
 
 TESTDATA = [pd.DataFrame(
     columns=["This",

@@ -2,8 +2,6 @@
 This module is used for abstracted uses of the multiprocess library.
 """
 
-
-
 import multiprocessing as mp
 from typing import Callable, Optional
 
