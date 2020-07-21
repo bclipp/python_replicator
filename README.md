@@ -12,7 +12,7 @@ This is a personal package used to hold code patterns used for multithreading an
 
 ```
 
-import replicant.multiprocess as mult
+import replicators.multiprocess as mult
 
 data_frame: pd.DataFrame = pd.DataFrame(
         columns=["This",
