@@ -12,7 +12,7 @@ with open("README.md") as fid:
 
 setup(
     name="replicators",
-    version="1.2.0",
+    version="1.2.1",
     description="abstraction for concurrency and multithreading",
     long_description=README,
     long_description_content_type="text/markdown",
