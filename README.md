@@ -11,6 +11,9 @@ This is a personal package used to hold code patterns used for multithreading an
 ```pip install replicator```
 
 ```
+pyenv install 3.8.0
+pyenv virtualenv 3.8.0 app_3.8
+pyenv activate app_3.8
 
 import replicators.multiprocess as mult
 

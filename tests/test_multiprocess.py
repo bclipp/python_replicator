@@ -1,6 +1,7 @@
 """
 tests for the multiprocess
 """
+from typing import Optional, Any, List
 
 import pandas as pd
 import pytest
@@ -29,17 +30,17 @@ TESTDATA = [pd.DataFrame(
           [16, 2, "b", 3, 4, 5, 3]])]
 
 
-def return_this(x):
+def return_this(anything: dict):
     """
     returns the value in the "This" key.
-    :param x:
+    :param anything:
     :return:
     """
-    return x["This"]
+    return anything["This"]
 
 
 @pytest.mark.parametrize("data_frame", TESTDATA)
-def test_multiprocess_me_side_effect(data_frame):
+def test_multiprocess_me_side_effect(data_frame: pd.DataFrame):
     """
     Used to test the multiprocess function without a return
     """
@@ -48,19 +49,19 @@ def test_multiprocess_me_side_effect(data_frame):
 
 
 @pytest.mark.parametrize("data_frame", TESTDATA)
-def test_multiprocess_me_side_return(data_frame):
+def test_multiprocess_me_side_return(data_frame: pd.DataFrame):
     """
-    Used to test the multiprocess funciton without a return
+    Used to test the multiprocess function without a return
     """
-    data: list = list(data_frame.T.to_dict().values())
-    got: list = mult.multiprocess_me(1, return_this, data, True)
+    data: Optional[Any] = list(data_frame.T.to_dict().values())
+    got: Optional[List[Any]] = mult.multiprocess_me(1, return_this, data, True)
     want: list = [5, 7, 8, 3, 2, 8, 2, 8, 19, 53, 11, 16]
     assert got == want
 
 
 def test_multiprocess_not_data_frame_input():
     """
-    Used to test the multiprocess funciton with a bad input
+    Used to test the multiprocess function with a bad input
     """
     data: str = "this is not a DataFrame"
     try:

@@ -3,12 +3,12 @@ This module is used for abstracted uses of the multiprocess library.
 """
 
 import multiprocessing as mp
-from typing import Callable, Optional
+from typing import Callable, Optional, Any
 
 
 def multiprocess_me(size: int,
                     func: Callable,
-                    data: list,
+                    data: Optional[Any],
                     output: bool = True) -> Optional[list]:
     """
     multiprocess_me is used to multiprocess across a list of dicts.
