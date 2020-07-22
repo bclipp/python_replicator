@@ -24,11 +24,11 @@ jobs:
     - name: Lint with pylint
       run: |
         # stop the build if pylint is 10 for everything
-        pylint replicant
+        pylint replicators
     - name: Lint with mypy
       run: |
         # stop the build if pylint is 10 for everything
-        mypy replicant
+        mypy replicators
     - name: Unit Test with pytest
       run: |
         pytest tests
